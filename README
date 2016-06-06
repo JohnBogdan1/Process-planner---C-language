@@ -1,0 +1,39 @@
+/* Ion Bogdan Ionut - 312CB */
+
+	Pentru actiunea start X Y (pornire proces cu id X si prioritate Y), am 
+folosit o functie de introducere ordonata in coada. In functia de introducere, 
+am parcurs coada de la inceput si am gasit pozitia unde trebuie introdus id-ul 
+dupa prioritate si dupa pas. Procesele sunt ordonate dupa prioritate si dupa 
+pasul la care au fost pornite(adica introduse in coada). De asemenea, am 
+folosit o functie de afisare a id-urilor din coada.
+
+	Pentru actiunea wait E X (procesul X intra in asteptare dupa evenimentul E), 
+am folosit o functie care extrage id-ul respectiv din coada si il introduce 
+intr-o stiva. Aceasta functie parcurge coada si elimina de la inceput. Folosesc
+o coada auxiliara pentru a comuta elementele. Daca am gasit id-ul il scot din 
+coada din prioritati fara sa il introduc in coada auxiliara si inceputul cozii 
+avanseaza, iar id-ul este introdus in stiva, iar daca nu l-am gasit, inceputul 
+cozii avanseaza, scot id-ul din coada de prioritati si il introduc in coada 
+auxiliara. Dupa, iau toate id-urile din coada auxiliara si le introduc in 
+coada de prioritati. Fiecare eveniment E dat, l-am retinut intr-un vector de 
+evenimente, care are ca dimensiune numarul de evenimente, pentru a putea afisa 
+de fiecare data evenimentele corespunzatoare proceselor care se afla in starea 
+de wait. Din acest vector am eliminat de fiecare data evenimentul care se 
+repeta, pentru a exista o singura data. De asemenea, vectorul a fost sortat, 
+pentru a afisa in ordine crescatoare stivele. Pentru construirea stivelor am 
+creat un vector de stive. De asemenea, am folosit o functie de afisare a 
+stivei.
+
+	Pentru actiunea event E (evenimentul E se produce), am folosit o functie 
+care scoate id-ul din varful stivei si il introduce in coada, in functie de 
+prioritate si pas. La aceasta actiune, am eliminat din vectorul de evenimente, 
+evenimentul E pentru a nu mai fi afisat.
+
+	Pentru actiunea end X (procesul cu id X isi incheie executia), am folosit 
+o functie de eliminare a id-ului din coada. Aceasta functie parcurge coada si 
+elimina de la inceput. Folosesc o coada auxiliara pentru a comuta elementele. 
+Daca am gasit id-ul il scot din coada din prioritati fara sa il introduc in 
+coada auxiliara si inceputul cozii avanseaza, iar daca nu l-am gasit, inceputul
+cozii avanseaza, scot id-ul din coada de prioritati si il introduc in coada 
+auxiliara. Dupa, iau toate id-urile din coada auxiliara si le introduc in 
+coada de prioritati.
